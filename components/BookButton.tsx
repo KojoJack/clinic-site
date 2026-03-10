@@ -8,7 +8,7 @@ declare global {
   }
 }
 
-const CALENDLY_URL = "https://calendly.com/hearandnowbradford";
+const CALENDLY_URL = "https://calendly.com/hearandnowbradford?hide_gdpr_banner=1";
 
 export function openCalendly() {
   window.Calendly?.initPopupWidget({ url: CALENDLY_URL });
