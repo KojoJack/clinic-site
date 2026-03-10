@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useInView } from "@/hooks/useInView";
 
 const credentials = [
@@ -9,92 +10,6 @@ const credentials = [
   { label: "Member", value: "Canadian Academy of Audiology" },
 ];
 
-function MaleHeadshot() {
-  return (
-    <svg
-      viewBox="0 0 200 270"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="w-full h-full"
-      aria-label="Dr. John Smith, Audiologist"
-    >
-      {/* Suit / shoulders */}
-      <path
-        d="M0 270 L0 198 Q42 180 72 174 L88 168 Q100 218 100 218 Q100 218 112 168 L128 174 Q158 180 200 198 L200 270 Z"
-        fill="#1A2830"
-      />
-      {/* Lapels */}
-      <path d="M88 174 L100 162 L100 218 L88 218 Z" fill="#243340" />
-      <path d="M112 174 L100 162 L100 218 L112 218 Z" fill="#1A2830" />
-      {/* White shirt */}
-      <path d="M94 174 L100 165 L106 174 L104 218 L96 218 Z" fill="white" opacity="0.92" />
-      {/* Tie */}
-      <path d="M98 168 L102 168 L106 192 L100 215 L94 192 Z" fill="#D4924A" />
-      {/* Tie knot */}
-      <path d="M97 168 L100 164 L103 168 L100 172 Z" fill="#C07A30" />
-
-      {/* Neck */}
-      <rect x="88" y="156" width="24" height="30" rx="6" fill="#E2A87A" />
-
-      {/* Head */}
-      <ellipse cx="100" cy="108" rx="52" ry="60" fill="#E2A87A" />
-
-      {/* Hair — short, professional, dark */}
-      <path
-        d="M48 100 Q52 44 100 40 Q148 44 152 100 Q138 68 100 65 Q62 68 48 100 Z"
-        fill="#1C1208"
-      />
-      {/* Hair sides */}
-      <path d="M48 100 Q45 120 49 138 Q53 116 58 104 Z" fill="#1C1208" />
-      <path d="M152 100 Q155 120 151 138 Q147 116 142 104 Z" fill="#1C1208" />
-      {/* Hair temples */}
-      <path d="M48 100 Q50 85 56 78 Q52 90 55 102 Z" fill="#1C1208" />
-      <path d="M152 100 Q150 85 144 78 Q148 90 145 102 Z" fill="#1C1208" />
-
-      {/* Ears */}
-      <ellipse cx="49" cy="116" rx="8" ry="11" fill="#D49A6A" />
-      <path d="M51 110 Q54 116 51 122" stroke="#C08860" strokeWidth="1" fill="none" />
-      <ellipse cx="151" cy="116" rx="8" ry="11" fill="#D49A6A" />
-      <path d="M149 110 Q146 116 149 122" stroke="#C08860" strokeWidth="1" fill="none" />
-
-      {/* Eyebrows — dark, slightly arched */}
-      <path d="M70 93 Q80 87 90 91" stroke="#1C1208" strokeWidth="3" strokeLinecap="round" fill="none" />
-      <path d="M110 91 Q120 87 130 93" stroke="#1C1208" strokeWidth="3" strokeLinecap="round" fill="none" />
-
-      {/* Eyes */}
-      <ellipse cx="82" cy="106" rx="9" ry="6.5" fill="white" />
-      <ellipse cx="118" cy="106" rx="9" ry="6.5" fill="white" />
-      {/* Irises */}
-      <circle cx="82" cy="106" r="5" fill="#3D2A1A" />
-      <circle cx="118" cy="106" r="5" fill="#3D2A1A" />
-      {/* Pupils */}
-      <circle cx="82" cy="106" r="2.5" fill="#0D0800" />
-      <circle cx="118" cy="106" r="2.5" fill="#0D0800" />
-      {/* Catchlights */}
-      <circle cx="84" cy="104" r="1.3" fill="white" />
-      <circle cx="120" cy="104" r="1.3" fill="white" />
-      {/* Lower eyelid shadow */}
-      <path d="M73 110 Q82 113 91 110" stroke="#D49A6A" strokeWidth="0.8" fill="none" opacity="0.6" />
-      <path d="M109 110 Q118 113 127 110" stroke="#D49A6A" strokeWidth="0.8" fill="none" opacity="0.6" />
-
-      {/* Nose */}
-      <path d="M100 115 Q97 126 93 130 Q100 134 107 130 Q103 126 100 115" fill="#D49A6A" opacity="0.7" />
-      <circle cx="94" cy="129" r="3" fill="#D49A6A" opacity="0.5" />
-      <circle cx="106" cy="129" r="3" fill="#D49A6A" opacity="0.5" />
-
-      {/* Mouth / subtle smile */}
-      <path d="M88 148 Q100 157 112 148" stroke="#B07850" strokeWidth="2.2" strokeLinecap="round" fill="none" />
-      <path d="M93 148 Q100 152 107 148" fill="#C08868" opacity="0.4" />
-
-      {/* Subtle cheek shading */}
-      <ellipse cx="72" cy="128" rx="12" ry="8" fill="#E89060" opacity="0.15" />
-      <ellipse cx="128" cy="128" rx="12" ry="8" fill="#E89060" opacity="0.15" />
-
-      {/* Chin shadow */}
-      <ellipse cx="100" cy="162" rx="22" ry="5" fill="#1B4F5A" opacity="0.25" />
-    </svg>
-  );
-}
 
 export default function About() {
   const { ref: leftRef, inView: leftIn } = useInView(0.15);
@@ -138,29 +53,34 @@ export default function About() {
               {/* Card */}
               <div
                 className="relative rounded-3xl overflow-hidden aspect-[3/4]"
-                style={{
-                  background: "linear-gradient(180deg, #2A7080 0%, #1B4F5A 100%)",
-                  border: "1px solid rgba(255,255,255,0.1)",
-                }}
+                style={{ border: "1px solid rgba(255,255,255,0.1)" }}
               >
-                {/* Headshot SVG fills the card */}
-                <div className="absolute inset-0">
-                  <MaleHeadshot />
-                </div>
+                {/* Photo */}
+                <Image
+                  src="/pexels-konrads-photo-32351209.jpg"
+                  alt="Dr. John Smith, Au.D. — Audiologist"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 768px) 100vw, 400px"
+                  priority
+                />
+
+                {/* Subtle teal tint overlay for brand consistency */}
+                <div
+                  className="absolute inset-0"
+                  style={{ background: "linear-gradient(to bottom, rgba(13,45,56,0.08) 0%, rgba(13,45,56,0.0) 40%, rgba(13,45,56,0.75) 100%)" }}
+                />
 
                 {/* Name overlay at bottom */}
-                <div
-                  className="absolute bottom-0 left-0 right-0 px-6 py-5"
-                  style={{ background: "linear-gradient(to top, rgba(13,45,56,0.95) 0%, transparent 100%)" }}
-                >
-                  <div className="text-white font-serif text-xl font-bold">Dr. John Smith</div>
-                  <div className="text-white/60 text-sm mt-0.5">Au.D. · Audiologist</div>
-                  <div className="mt-2 inline-flex items-center gap-2 bg-white/10 rounded-full px-3 py-1">
+                <div className="absolute bottom-0 left-0 right-0 px-6 py-5">
+                  <div className="text-white font-serif text-xl font-bold drop-shadow">Dr. John Smith</div>
+                  <div className="text-white/80 text-sm mt-0.5 drop-shadow">Au.D. · Audiologist</div>
+                  <div className="mt-2 inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm rounded-full px-3 py-1">
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden>
                       <circle cx="6" cy="6" r="5" stroke="#D4924A" strokeWidth="1.5" />
                       <path d="M6 4v3l2 1" stroke="#D4924A" strokeWidth="1.2" strokeLinecap="round" />
                     </svg>
-                    <span className="text-white/70 text-xs">Western University</span>
+                    <span className="text-white/80 text-xs">Western University</span>
                   </div>
                 </div>
 
